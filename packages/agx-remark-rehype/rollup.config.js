@@ -6,7 +6,7 @@ module.exports = withNx(
     outputPath: '../../dist/packages/agx-remark-rehype',
     tsConfig: './tsconfig.lib.json',
     compiler: 'swc',
-    format: ['cjs', 'esm'],
+    format: ['esm'],
     assets: [{ input: '.', output: '.', glob: '*.md' }],
   },
   {
