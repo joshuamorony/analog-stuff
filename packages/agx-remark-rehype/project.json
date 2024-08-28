@@ -1,0 +1,28 @@
+{
+  "name": "agx-remark-rehype",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/agx-remark-rehype/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/agx-remark-rehype",
+        "main": "packages/agx-remark-rehype/src/index.ts",
+        "tsConfig": "packages/agx-remark-rehype/tsconfig.lib.json",
+        "assets": ["packages/agx-remark-rehype/*.md"],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/packages/agx-remark-rehype"
+      }
+    }
+  }
+}
