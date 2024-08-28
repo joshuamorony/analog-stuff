@@ -1,6 +1,7 @@
 {
   "name": "@joshmorony/agx-remark-rehype",
-  "version": "0.0.3",
+  "version": "0.0.4",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/joshuamorony/analog-stuff"
@@ -29,8 +30,5 @@
     "unified": "^11.0.5",
     "unist": "^0.0.1",
     "unist-util-visit": "^5.0.0"
-  },
-  "type": "module",
-  "exports": "./src/index.js",
-  "typings": "./src/index.d.ts"
+  }
 }
