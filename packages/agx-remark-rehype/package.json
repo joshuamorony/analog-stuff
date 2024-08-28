@@ -1,7 +1,14 @@
 {
   "name": "agx-remark-rehype",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "rehype-stringify": "^10.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "unified": "^11.0.5",
+    "unist": "^0.0.1",
+    "unist-util-visit": "^5.0.0"
+  },
   "type": "commonjs",
   "main": "./index.cjs",
   "private": true
