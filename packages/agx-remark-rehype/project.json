@@ -6,15 +6,13 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/esbuild:esbuild",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/agx-remark-rehype",
         "main": "packages/agx-remark-rehype/src/index.ts",
         "tsConfig": "packages/agx-remark-rehype/tsconfig.lib.json",
-        "assets": ["packages/agx-remark-rehype/*.md"],
-        "generatePackageJson": true,
-        "format": ["cjs"]
+        "assets": ["packages/agx-remark-rehype/*.md"]
       }
     },
     "test": {

@@ -1,6 +1,6 @@
 {
   "name": "@joshmorony/agx-remark-rehype",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/joshuamorony/analog-stuff"
@@ -22,6 +22,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "tslib": "^2.3.0",
     "rehype-stringify": "^10.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
@@ -30,5 +31,6 @@
     "unist-util-visit": "^5.0.0"
   },
   "type": "commonjs",
-  "main": "./index.cjs"
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts"
 }
