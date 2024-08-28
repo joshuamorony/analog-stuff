@@ -1,11 +1,28 @@
 # agx-remark-rehype
 
-This library was generated with [Nx](https://nx.dev).
+## Usage
 
-## Building
+This package can be used with AnalogJS by adding it to your `vite.config.ts`:
 
-Run `nx build agx-remark-rehype` to build the library.
+```ts
+import { agxRemarkRehype } from '@joshmorony/agx-remark-rehype'
+```
 
-## Running unit tests
-
-Run `nx test agx-remark-rehype` to execute the unit tests via [Vitest](https://vitest.dev/).
+```ts
+    plugins: [
+      analog({
+        vite: {
+          experimental: {
+            supportAnalogFormat: true,
+            markdownTemplateTransforms: [
+              agxRemarkRehype({
+                remarkPlugins: [[someRemarkPlugin, { withOptions: 0.4 }]],
+                rehypePlugins: [someRehypePlugin, someOtherRehypePlugin],
+              }),
+            ],
+          },
+        },
+      }),
+      ...
+    ],
+```
