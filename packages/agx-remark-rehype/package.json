@@ -1,6 +1,26 @@
 {
-  "name": "agx-remark-rehype",
+  "name": "@joshmorony/agx-remark-rehype",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshuamorony/analog-stuff"
+  },
+  "description": "Uses unified and remark/rehype ecosystem for parsing agx files in AnalogJS",
+  "keywords": [
+    "analog",
+    "angular",
+    "markdown",
+    "remark",
+    "rehype"
+  ],
+  "author": {
+    "name": "Joshua Morony"
+  },
+  "homepage": "https://github.com/joshuamorony/analog-stuff/tree/main/packages/agx-remark-rehype",
+  "bugs": {
+    "url": "https://github.com/joshuamorony/analog-stuff/issues"
+  },
+  "license": "MIT",
   "dependencies": {
     "rehype-stringify": "^10.0.0",
     "remark-parse": "^11.0.0",
