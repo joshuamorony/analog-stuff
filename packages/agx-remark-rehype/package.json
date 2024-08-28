@@ -30,6 +30,5 @@
     "unist-util-visit": "^5.0.0"
   },
   "type": "commonjs",
-  "main": "./index.cjs",
-  "private": true
+  "main": "./index.cjs"
 }
