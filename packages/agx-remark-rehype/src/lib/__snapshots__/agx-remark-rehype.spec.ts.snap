@@ -1,5 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`agxRemarkRehype > should escape characters that break Angular templates 1`] = `
+"<h2>Test</h2>
+<p>Hello
+Watch out for &#64; characters, they upset Angular. A &#x2774; can be quite scary too.</p>
+<pre><code class="language-ts">&#x2774;&#x2775;
+&#64;
+</code></pre>"
+`;
+
 exports[`agxRemarkRehype > should return standard markdown unmodified 1`] = `
 "<h2>Test</h2>
 <p>Hello</p>
