@@ -13,3 +13,11 @@ describe('agxRemarkRehype', () => {
 
   it('should allow supplying rehype plugins', () => {});
 });
+
+const standardMarkdown = `
+## Test
+Hello
+* one
+* two
+* three
+`;

@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`agxRemarkRehype > should return standard markdown unmodified 1`] = `
+"<h2>Test</h2>
+<p>Hello</p>
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>"
+`;
