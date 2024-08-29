@@ -1,5 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`agxRemarkRehype > should allow Angular control flow syntax without escaping 1`] = `
+"<h2>Test</h2>
+<p>Hello</p>
+<p>@for(quiz of quizzes; track $index){
+<Quiz [id]="quiz.id" [questionText]="quiz.questionText" [answers]="quiz.answers" />
+}</p>"
+`;
+
 exports[`agxRemarkRehype > should allow embedding components without escaping 1`] = `
 "<h2>Test</h2>
 <p>Hello</p>

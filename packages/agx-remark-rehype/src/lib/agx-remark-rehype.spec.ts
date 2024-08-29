@@ -19,7 +19,11 @@ describe('agxRemarkRehype', () => {
     expect(content).toMatchSnapshot();
   });
 
-  it('should allow Angular control flow syntax without escaping', () => {});
+  it('should allow Angular control flow syntax without escaping', async () => {
+    const transform = agxRemarkRehype();
+    const content = await transform(controlFlowMarkdown, 'test.agx');
+    expect(content).toMatchSnapshot();
+  });
 
   it('should allow supplying remark plugins', () => {});
 
@@ -50,4 +54,13 @@ Hello
 
 <my-angular-component />
 <my-angular-component></my-angular-component>
+`;
+
+const controlFlowMarkdown = `
+## Test
+Hello
+
+@for(quiz of quizzes; track $index){
+  <Quiz [id]="quiz.id" [questionText]="quiz.questionText" [answers]="quiz.answers" />
+}
 `;
