@@ -1,4 +1,5 @@
 import { agxRemarkRehype } from './agx-remark-rehype';
+import { visit } from 'unist-util-visit';
 
 describe('agxRemarkRehype', () => {
   it('should return standard markdown unmodified', async () => {
@@ -25,10 +26,38 @@ describe('agxRemarkRehype', () => {
     expect(content).toMatchSnapshot();
   });
 
-  it('should allow supplying remark plugins', () => {});
+  it('should allow supplying remark plugins', async () => {
+    const transform = agxRemarkRehype({ remarkPlugins: [mockRemarkPlugin] });
+    const content = await transform(standardMarkdown, 'test.agx');
+    expect(content).toMatchSnapshot();
+  });
 
-  it('should allow supplying rehype plugins', () => {});
+  it('should allow supplying rehype plugins', async () => {
+    const transform = agxRemarkRehype({ rehypePlugins: [mockRehypePlugin] });
+    const content = await transform(standardMarkdown, 'test.agx');
+    expect(content).toMatchSnapshot();
+  });
 });
+
+const mockRehypePlugin = () => {
+  return (tree: any) => {
+    visit(tree, 'element', (node) => {
+      if (node.tagName === 'p') {
+        visit(node, 'text', (childNode) => {
+          childNode.value = 'hi';
+        });
+      }
+    });
+  };
+};
+
+const mockRemarkPlugin = () => {
+  return (tree: any) => {
+    visit(tree, 'paragraph', (node) => {
+      node.children = [{ type: 'text', value: 'hi' }];
+    });
+  };
+};
 
 const standardMarkdown = `
 ## Test

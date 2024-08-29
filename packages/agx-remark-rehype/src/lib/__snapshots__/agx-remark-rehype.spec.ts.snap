@@ -15,6 +15,26 @@ exports[`agxRemarkRehype > should allow embedding components without escaping 1`
 <my-angular-component></my-angular-component>"
 `;
 
+exports[`agxRemarkRehype > should allow supplying rehype plugins 1`] = `
+"<h2>Test</h2>
+<p>hi</p>
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>"
+`;
+
+exports[`agxRemarkRehype > should allow supplying remark plugins 1`] = `
+"<h2>Test</h2>
+<p>hi</p>
+<ul>
+<li>hi</li>
+<li>hi</li>
+<li>hi</li>
+</ul>"
+`;
+
 exports[`agxRemarkRehype > should escape characters that break Angular templates 1`] = `
 "<h2>Test</h2>
 <p>Hello
