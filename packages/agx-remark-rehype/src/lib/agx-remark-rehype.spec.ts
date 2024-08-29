@@ -13,7 +13,11 @@ describe('agxRemarkRehype', () => {
     expect(content).toMatchSnapshot();
   });
 
-  it('should allow embedding components without escaping', () => {});
+  it('should allow embedding components without escaping', async () => {
+    const transform = agxRemarkRehype();
+    const content = await transform(componentMarkdown, 'test.agx');
+    expect(content).toMatchSnapshot();
+  });
 
   it('should allow Angular control flow syntax without escaping', () => {});
 
@@ -38,4 +42,12 @@ Watch out for @ characters, they upset Angular. A { can be quite scary too.
 {}
 @
 \`\`\`
+`;
+
+const componentMarkdown = `
+## Test
+Hello
+
+<my-angular-component />
+<my-angular-component></my-angular-component>
 `;
