@@ -37,6 +37,14 @@ describe('agxRemarkRehype', () => {
     const content = await transform(standardMarkdown, 'test.agx');
     expect(content).toMatchSnapshot();
   });
+
+  it('should allow supplying plugins with options', async () => {
+    const transform = agxRemarkRehype({
+      remarkPlugins: [[mockRemarkPluginWithOptions, { replaceWith: 'bye' }]],
+    });
+    const content = await transform(standardMarkdown, 'test.agx');
+    expect(content).toMatchSnapshot();
+  });
 });
 
 const mockRehypePlugin = () => {
@@ -55,6 +63,14 @@ const mockRemarkPlugin = () => {
   return (tree: any) => {
     visit(tree, 'paragraph', (node) => {
       node.children = [{ type: 'text', value: 'hi' }];
+    });
+  };
+};
+
+const mockRemarkPluginWithOptions = (options: any) => {
+  return (tree: any) => {
+    visit(tree, 'paragraph', (node) => {
+      node.children = [{ type: 'text', value: options.replaceWith }];
     });
   };
 };
