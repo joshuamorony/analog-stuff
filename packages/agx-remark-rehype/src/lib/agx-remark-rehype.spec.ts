@@ -45,6 +45,12 @@ describe('agxRemarkRehype', () => {
     const content = await transform(standardMarkdown, 'test.agx');
     expect(content).toMatchSnapshot();
   });
+
+  it('should strip frontmatter', async () => {
+    const transform = agxRemarkRehype();
+    const content = await transform(frontmatterMarkdown, 'test.agx');
+    expect(content).toMatchSnapshot();
+  });
 });
 
 const mockRehypePlugin = () => {
@@ -76,6 +82,18 @@ const mockRemarkPluginWithOptions = (options: any) => {
 };
 
 const standardMarkdown = `
+## Test
+Hello
+* one
+* two
+* three
+`;
+
+const frontmatterMarkdown = `---
+title: hi
+something: test
+---
+
 ## Test
 Hello
 * one

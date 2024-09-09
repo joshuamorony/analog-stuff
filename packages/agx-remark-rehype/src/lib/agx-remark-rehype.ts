@@ -5,6 +5,9 @@ import { visit } from 'unist-util-visit';
 import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkExtractFrontmatter from 'remark-extract-frontmatter';
+import yaml from 'yaml';
 
 type MarkdownTemplateTransform = (
   content: string,
@@ -101,7 +104,10 @@ const applyPlugins = (
 };
 
 const setupUnified = (options: RemarkRehypeOptions) => {
-  const toMDAST = unified().use(remarkParse);
+  const toMDAST = unified()
+    .use(remarkParse)
+    .use(remarkFrontmatter, ['yaml'])
+    .use(remarkExtractFrontmatter, { yaml: yaml.parse });
   applyPlugins(options.remarkPlugins || [], toMDAST);
   const toHAST = toMDAST.use(remarkRehype, { allowDangerousHtml: true });
   applyPlugins(options.rehypePlugins || [], toHAST);
