@@ -51,6 +51,18 @@ describe('agxRemarkRehype', () => {
     const content = await transform(frontmatterMarkdown, 'test.agx');
     expect(content).toMatchSnapshot();
   });
+
+  it('should allow binding to images', async () => {
+    const transform = agxRemarkRehype();
+    const content = await transform(imgMarkdown, 'test.agx');
+    expect(content).toMatchSnapshot();
+  });
+
+  it('should allow standard HTML', async () => {
+    const transform = agxRemarkRehype();
+    const content = await transform(htmlMarkdown, 'test.agx');
+    expect(content).toMatchSnapshot();
+  });
 });
 
 const mockRehypePlugin = () => {
@@ -87,6 +99,30 @@ Hello
 * one
 * two
 * three
+`;
+
+const htmlMarkdown = `
+## Test
+Hello
+* one
+* two
+* three
+
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>
+`;
+
+const imgMarkdown = `
+## Test
+Hello
+* one
+* two
+* three
+
+<img [src]="myImage" />
 `;
 
 const frontmatterMarkdown = `---

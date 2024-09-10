@@ -52,6 +52,9 @@ const rehypeAnalog: Plugin = () => {
           const literal = childNode as Literal;
           if (detectAngularControlFlow(literal.value as string)) {
             literal.type = 'raw';
+          } else if (detectHTML(literal.value as string)) {
+            (node as Literal).type = 'raw';
+            (node as Literal).value = literal.value;
           } else {
             literal.value = escapeBreakingCharacters(literal.value as string);
           }
@@ -85,6 +88,10 @@ const detectAngularControlFlow = (text: string) => {
       text.trim().startsWith('@defer')) &&
     text.trim().endsWith('}')
   );
+};
+
+const detectHTML = (text: string) => {
+  return text.trim().startsWith('<') && text.trim().endsWith('/>');
 };
 
 const applyPlugins = (

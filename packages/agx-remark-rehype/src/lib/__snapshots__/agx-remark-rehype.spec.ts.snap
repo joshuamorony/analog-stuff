@@ -8,11 +8,37 @@ exports[`agxRemarkRehype > should allow Angular control flow syntax without esca
 }</p>"
 `;
 
+exports[`agxRemarkRehype > should allow binding to images 1`] = `
+"<h2>Test</h2>
+<p>Hello</p>
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>
+<img [src]="myImage" />"
+`;
+
 exports[`agxRemarkRehype > should allow embedding components without escaping 1`] = `
 "<h2>Test</h2>
 <p>Hello</p>
 <my-angular-component />
 <my-angular-component></my-angular-component>"
+`;
+
+exports[`agxRemarkRehype > should allow standard HTML 1`] = `
+"<h2>Test</h2>
+<p>Hello</p>
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>"
 `;
 
 exports[`agxRemarkRehype > should allow supplying plugins with options 1`] = `
