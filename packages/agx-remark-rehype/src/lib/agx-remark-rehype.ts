@@ -40,8 +40,8 @@ export const agxRemarkRehype =
 const fixDoubleEscape = (content: string) => {
   return content
     .replace(/&#x26;#64;/g, '&#64;')
-    .replace(/&#x26;#x2774;/g, '&#x2774;')
-    .replace(/&#x26;#x2775;/g, '&#x2775;');
+    .replace(/&#x26;#x2774;/g, '&lbrace;')
+    .replace(/&#x26;#x2775;/g, '&rbrace;');
 };
 
 const rehypeAnalog: Plugin = () => {
