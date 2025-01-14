@@ -140,11 +140,10 @@ Hello
 const breakingCharactersMarkdown = `
 ## Test
 Hello
-Watch out for @ characters, they upset Angular. A {, and even \` can be quite scary too.
+Watch out for @ characters, they upset Angular. A { can be quite scary too.
 \`\`\`ts
 {}
 @
-\`\`
 \`\`\`
 `;
 

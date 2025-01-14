@@ -74,10 +74,9 @@ exports[`agxRemarkRehype > should allow supplying remark plugins 1`] = `
 exports[`agxRemarkRehype > should escape characters that break Angular templates 1`] = `
 "<h2>Test</h2>
 <p>Hello
-Watch out for &#64; characters, they upset Angular. A &lbrace;, and even &#96; can be quite scary too.</p>
+Watch out for &#64; characters, they upset Angular. A &lbrace; can be quite scary too.</p>
 <pre><code class="language-ts">&lbrace;&rbrace;
 &#64;
-&#96;&#96;
 </code></pre>"
 `;
 

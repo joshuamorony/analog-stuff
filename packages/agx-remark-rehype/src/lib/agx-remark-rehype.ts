@@ -41,7 +41,6 @@ const fixDoubleEscape = (content: string) => {
   return content
     .replace(/&#x26;#64;/g, '&#64;')
     .replace(/&#x26;#x2774;/g, '&lbrace;')
-    .replace(/&#x26;#96;/g, '&#96;')
     .replace(/&#x26;#x2775;/g, '&rbrace;');
 };
 
@@ -78,8 +77,6 @@ const escapeBreakingCharacters = (code: string) => {
   // such as @, {, and ,}.
   code = code.replace(/@/g, '&#64;');
   code = code.replace(/{/g, '&#x2774;').replace(/}/g, '&#x2775;');
-  code = code.replace(/`/g, '&#96;');
-
   return code;
 };
 
