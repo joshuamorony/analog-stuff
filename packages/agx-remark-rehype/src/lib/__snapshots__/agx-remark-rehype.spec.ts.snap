@@ -75,7 +75,7 @@ exports[`agxRemarkRehype > should escape characters that break Angular templates
 "<h2>Test</h2>
 <p>Hello
 Watch out for &#64; characters, they upset Angular. A &lbrace; can be quite scary too.</p>
-<pre><code class="language-ts">&lbrace;&rbrace;
+<pre ngNonBindable><code class="language-ts">&lbrace;&rbrace;
 &#64;
 </code></pre>"
 `;

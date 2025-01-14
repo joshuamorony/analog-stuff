@@ -67,6 +67,10 @@ const rehypeAnalog: Plugin = () => {
           literal.value = escapeBreakingCharacters(literal.value as string);
         });
       }
+
+      if ((node as any).tagName === 'pre') {
+        (node as any).properties.ngNonBindable = true;
+      }
     });
   };
 };
